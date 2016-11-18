@@ -141,7 +141,8 @@ molecular descriptors provided in OpenBabel.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='no'>mol1</span> <span class='kw'>=</span> <span class='st'>'CC(=O)NCCC1=CNc2c1cc(OC)cc2'</span>  <span class='co'># one molecule SMILE in a vector</span>
+    <pre class="examples"><span class='co'># May cause core dump under Ubuntu 16.04</span>
+<span class='no'>mol1</span> <span class='kw'>=</span> <span class='st'>'CC(=O)NCCC1=CNc2c1cc(OC)cc2'</span>  <span class='co'># one molecule SMILE in a vector</span>
 <span class='no'>mol2</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>'OCCc1c(C)[n+](=cs1)Cc2cnc(C)nc(N)2'</span>,
          <span class='st'>'CCc(c1)ccc2[n+]1ccc3c2Nc4c3cccc4'</span>,
          <span class='st'>'[Cu+2].[O-]S(=O)(=O)[O-]'</span>)  <span class='co'># multiple SMILEs in a vector</span>
