@@ -110,9 +110,9 @@ the columns represent the fingerprints.</p>
 <span class='no'>mol2</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>'CCC'</span>, <span class='st'>'CCN'</span>, <span class='st'>'CCN(C)(C)'</span>, <span class='st'>'c1ccccc1Cc1ccccc1'</span>,
          <span class='st'>'C1CCC1CC(CN(C)(C))CC(=O)CC'</span>)  <span class='co'># multiple SMILEs in a vector</span>
 <span class='no'>mol3</span> <span class='kw'>=</span> <span class='fu'>readChar</span>(<span class='fu'>system.file</span>(<span class='st'>'compseq/DB00860.sdf'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'Rcpi'</span>),
-                <span class='kw'>nchars</span> <span class='kw'>=</span> <span class='fl'>1e+6</span>)  <span class='co'># single molecule in single sdf file</span>
+                <span class='kw'>nchars</span> <span class='kw'>=</span> <span class='fl'>1e+6</span>)  <span class='co'># single molecule in a sdf file</span>
 <span class='no'>mol4</span> <span class='kw'>=</span> <span class='fu'>readChar</span>(<span class='fu'>system.file</span>(<span class='st'>'sysdata/OptAA3d.sdf'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'Rcpi'</span>),
-                <span class='kw'>nchars</span> <span class='kw'>=</span> <span class='fl'>1e+6</span>)  <span class='co'># multiple molecules in single sdf file</span>
+                <span class='kw'>nchars</span> <span class='kw'>=</span> <span class='fl'>1e+6</span>)  <span class='co'># multiple molecules in a sdf file</span>
 
 <span class='no'>smifp0</span> <span class='kw'>=</span> <span class='fu'>extractDrugOBFP4</span>(<span class='no'>mol1</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>'smile'</span>)
 <span class='no'>smifp1</span> <span class='kw'>=</span> <span class='fu'>extractDrugOBFP4</span>(<span class='no'>mol2</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>'smile'</span>)

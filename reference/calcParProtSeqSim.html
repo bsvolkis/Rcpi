@@ -134,7 +134,8 @@ Gene Ontology (GO) semantic similarity.</p>
 <span class='no'>s4</span> <span class='kw'>=</span> <span class='fu'><a href='readFASTA.html'>readFASTA</a></span>(<span class='fu'>system.file</span>(<span class='st'>'protseq/P20160.fasta'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'Rcpi'</span>))<span class='kw'>[[</span><span class='fl'>1</span>]]
 <span class='no'>s5</span> <span class='kw'>=</span> <span class='fu'><a href='readFASTA.html'>readFASTA</a></span>(<span class='fu'>system.file</span>(<span class='st'>'protseq/Q9NZP8.fasta'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'Rcpi'</span>))<span class='kw'>[[</span><span class='fl'>1</span>]]
 <span class='no'>plist</span> <span class='kw'>=</span> <span class='fu'>list</span>(<span class='no'>s1</span>, <span class='no'>s2</span>, <span class='no'>s3</span>, <span class='no'>s4</span>, <span class='no'>s5</span>)
-<span class='no'>psimmat</span> <span class='kw'>=</span> <span class='fu'>calcParProtSeqSim</span>(<span class='no'>plist</span>, <span class='kw'>cores</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>'local'</span>, <span class='kw'>submat</span> <span class='kw'>=</span> <span class='st'>'BLOSUM62'</span>)
+<span class='no'>psimmat</span> <span class='kw'>=</span> <span class='fu'>calcParProtSeqSim</span>(<span class='no'>plist</span>, <span class='kw'>cores</span> <span class='kw'>=</span> <span class='fl'>2</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>'local'</span>,
+                            <span class='kw'>submat</span> <span class='kw'>=</span> <span class='st'>'BLOSUM62'</span>)
 <span class='fu'>print</span>(<span class='no'>psimmat</span>)</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
