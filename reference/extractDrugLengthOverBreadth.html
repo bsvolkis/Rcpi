@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -84,29 +86,32 @@
     <p>Calculate the Ratio of Length to Breadth Descriptor</p>
     
 
-    <pre><span class='fu'>extractDrugLengthOverBreadth</span>(<span class='no'>molecules</span>, <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>extractDrugLengthOverBreadth</span>(<span class='no'>molecules</span>, <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>molecules</dt>
-      <dd>Parsed molucule object.</dd>
-      <dt>silent</dt>
-      <dd>Logical. Whether the calculating process
-should be shown or not, default is <code>TRUE</code>.</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>molecules</th>
+      <td><p>Parsed molucule object.</p></td>
+    </tr>
+    <tr>
+      <th>silent</th>
+      <td><p>Logical. Whether the calculating process
+should be shown or not, default is <code>TRUE</code>.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A data frame, each row represents one of the molecules,
 each column represents one feature.
-This function returns two columns named <code>LOBMAX</code> and <code>LOBMIN</code>:
-<ul>
-<li> <code>LOBMAX</code> - The maximum L/B ratio;
-</li>
-<li> <code>LOBMIN</code> - The L/B ratio for the rotation that results in the
-minimum area (defined by the product of the X &amp; Y extents for that orientation).
-</li>
-</ul></p>
+This function returns two columns named <code>LOBMAX</code> and <code>LOBMIN</code>:</p><ul>
+<li><p><code>LOBMAX</code> - The maximum L/B ratio;</p></li>
+<li><p><code>LOBMIN</code> - The L/B ratio for the rotation that results in the
+minimum area (defined by the product of the X &amp; Y extents for that orientation).</p></li>
+</ul>
+
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -122,6 +127,7 @@ extents for a series of rotations about the Z axis
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='no'>sdf</span> <span class='kw'>=</span> <span class='fu'>system.file</span>(<span class='st'>'sysdata/OptAA3d.sdf'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'Rcpi'</span>)
+
 <span class='no'>mol</span> <span class='kw'>=</span> <span class='fu'><a href='readMolFromSDF.html'>readMolFromSDF</a></span>(<span class='no'>sdf</span>)
 <span class='no'>dat</span> <span class='kw'>=</span> <span class='fu'>extractDrugLengthOverBreadth</span>(<span class='no'>mol</span>)
 <span class='fu'>head</span>(<span class='no'>dat</span>)</pre>

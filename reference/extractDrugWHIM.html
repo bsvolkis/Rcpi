@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -84,103 +86,75 @@
     <p>Calculate Holistic Descriptors Described by Todeschini et al.</p>
     
 
-    <pre><span class='fu'>extractDrugWHIM</span>(<span class='no'>molecules</span>, <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>extractDrugWHIM</span>(<span class='no'>molecules</span>, <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>molecules</dt>
-      <dd>Parsed molucule object.</dd>
-      <dt>silent</dt>
-      <dd>Logical. Whether the calculating process
-should be shown or not, default is <code>TRUE</code>.</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>molecules</th>
+      <td><p>Parsed molucule object.</p></td>
+    </tr>
+    <tr>
+      <th>silent</th>
+      <td><p>Logical. Whether the calculating process
+should be shown or not, default is <code>TRUE</code>.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A data frame, each row represents one of the molecules,
 each column represents one feature.
-This function returns 17 columns:
-<ul>
-<li> Wlambda1
-</li>
-<li> Wlambda2
-</li>
-<li> wlambda3
-</li>
-<li> Wnu1
-</li>
-<li> Wnu2
-</li>
-<li> Wgamma1
-</li>
-<li> Wgamma2
-</li>
-<li> Wgamma3
-</li>
-<li> Weta1
-</li>
-<li> Weta2
-</li>
-<li> Weta3
-</li>
-<li> WT
-</li>
-<li> WA
-</li>
-<li> WV
-</li>
-<li> WK
-</li>
-<li> WG
-</li>
-<li> WD
-</li>
-</ul></p>
-    <p>Each name will have a suffix of the form <code>.X</code> where <code>X</code> indicates
-the weighting scheme used. Possible values of <code>X</code> are
-<ul>
-<li> unity
-</li>
-<li> mass
-</li>
-<li> volume
-</li>
-<li> eneg
-</li>
-<li> polar
-</li>
-</ul></p>
+This function returns 17 columns:</p><ul>
+<li><p>Wlambda1</p></li>
+<li><p>Wlambda2</p></li>
+<li><p>wlambda3</p></li>
+<li><p>Wnu1</p></li>
+<li><p>Wnu2</p></li>
+<li><p>Wgamma1</p></li>
+<li><p>Wgamma2</p></li>
+<li><p>Wgamma3</p></li>
+<li><p>Weta1</p></li>
+<li><p>Weta2</p></li>
+<li><p>Weta3</p></li>
+<li><p>WT</p></li>
+<li><p>WA</p></li>
+<li><p>WV</p></li>
+<li><p>WK</p></li>
+<li><p>WG</p></li>
+<li><p>WD</p></li>
+</ul>
+
+<p>Each name will have a suffix of the form <code>.X</code> where <code>X</code> indicates
+the weighting scheme used. Possible values of <code>X</code> are</p><ul>
+<li><p>unity</p></li>
+<li><p>mass</p></li>
+<li><p>volume</p></li>
+<li><p>eneg</p></li>
+<li><p>polar</p></li>
+</ul>
+
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Holistic descriptors described by Todeschini et al, the descriptors
 are based on a number of atom weightings.
-There are six different possible weightings:
-<ul>
-<li> unit weights
-</li>
-<li> atomic masses
-</li>
-<li> van der Waals volumes
-</li>
-<li> Mulliken atomic electronegativites
-</li>
-<li> atomic polarizabilities
-</li>
-<li> E-state values described by Kier and Hall
-</li>
-</ul></p>
+There are six different possible weightings:</p><ul>
+<li><p>unit weights</p></li>
+<li><p>atomic masses</p></li>
+<li><p>van der Waals volumes</p></li>
+<li><p>Mulliken atomic electronegativites</p></li>
+<li><p>atomic polarizabilities</p></li>
+<li><p>E-state values described by Kier and Hall</p></li>
+</ul>
     <p>Currently weighting schemes 1, 2, 3, 4 and 5 are implemented.
 The weight values are taken from Todeschini et al.
 and as a result 19 elements are considered.
-For each weighting scheme we can obtain
-<ul>
-<li> 11 directional WHIM descriptors (lambda1 .. 3, nu1 .. 2, gamma1 .. 3, eta1 .. 3)
-</li>
-<li> 6 non-directional WHIM descriptors (T, A, V, K, G, D)
-</li>
-</ul></p>
-    <p>Though Todeschini et al. mentions that for planar molecules
+For each weighting scheme we can obtain</p><ul>
+<li><p>11 directional WHIM descriptors (lambda1 .. 3, nu1 .. 2, gamma1 .. 3, eta1 .. 3)</p></li>
+<li><p>6 non-directional WHIM descriptors (T, A, V, K, G, D)</p></li>
+</ul><p>Though Todeschini et al. mentions that for planar molecules
 only 8 directional WHIM descriptors are required the current code will return all 11.</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
@@ -192,6 +166,7 @@ Persepectives in Drug Discovery and Design, 1998, ?:355-380.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='no'>sdf</span> <span class='kw'>=</span> <span class='fu'>system.file</span>(<span class='st'>'sysdata/OptAA3d.sdf'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'Rcpi'</span>)
+
 <span class='no'>mol</span> <span class='kw'>=</span> <span class='fu'><a href='readMolFromSDF.html'>readMolFromSDF</a></span>(<span class='no'>sdf</span>)
 <span class='no'>dat</span> <span class='kw'>=</span> <span class='fu'>extractDrugWHIM</span>(<span class='no'>mol</span>)
 <span class='fu'>head</span>(<span class='no'>dat</span>)</pre>

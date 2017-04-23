@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -84,27 +86,34 @@
     <p>Read Protein Sequences in FASTA Format</p>
     
 
-    <pre><span class='fu'>readFASTA</span>(<span class='kw'>file</span> <span class='kw'>=</span> <span class='fu'>system.file</span>(<span class='st'>"protseq/P00750.fasta"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"Rcpi"</span>),
+    <pre class="usage"><span class='fu'>readFASTA</span>(<span class='kw'>file</span> <span class='kw'>=</span> <span class='fu'>system.file</span>(<span class='st'>"protseq/P00750.fasta"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"Rcpi"</span>),
   <span class='kw'>legacy.mode</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>seqonly</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>file</dt>
-      <dd>The name of the file which the sequences in fasta format are
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>file</th>
+      <td><p>The name of the file which the sequences in fasta format are
 to be read from. If it does not contain an absolute or
 relative path, the file name is relative to the current
 working directory, <code>getwd</code>.
 The default here is to read the <code>P00750.fasta</code> file which
-is present in the <code>protseq</code> directory of the Rcpi package.</dd>
-      <dt>legacy.mode</dt>
-      <dd>If set to <code>TRUE</code>, lines starting with a semicolon &#39;;&#39;
-are ignored. Default value is <code>TRUE</code>.</dd>
-      <dt>seqonly</dt>
-      <dd>If set to <code>TRUE</code>, only sequences as returned without
+is present in the <code>protseq</code> directory of the Rcpi package.</p></td>
+    </tr>
+    <tr>
+      <th>legacy.mode</th>
+      <td><p>If set to <code>TRUE</code>, lines starting with a semicolon ';'
+are ignored. Default value is <code>TRUE</code>.</p></td>
+    </tr>
+    <tr>
+      <th>seqonly</th>
+      <td><p>If set to <code>TRUE</code>, only sequences as returned without
 attempt to modify them or to get their names and
 annotations (execution time is divided approximately
-by a factor 3). Default value is <code>FALSE</code>.</dd>
-    </dl>
+by a factor 3). Default value is <code>FALSE</code>.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 

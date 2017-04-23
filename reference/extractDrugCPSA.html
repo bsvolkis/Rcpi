@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -84,96 +86,72 @@
     <p>A Variety of Descriptors Combining Surface Area and Partial Charge Information</p>
     
 
-    <pre><span class='fu'>extractDrugCPSA</span>(<span class='no'>molecules</span>, <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>extractDrugCPSA</span>(<span class='no'>molecules</span>, <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>molecules</dt>
-      <dd>Parsed molucule object.</dd>
-      <dt>silent</dt>
-      <dd>Logical. Whether the calculating process
-should be shown or not, default is <code>TRUE</code>.</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>molecules</th>
+      <td><p>Parsed molucule object.</p></td>
+    </tr>
+    <tr>
+      <th>silent</th>
+      <td><p>Logical. Whether the calculating process
+should be shown or not, default is <code>TRUE</code>.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A data frame, each row represents one of the molecules,
-each column represents one feature. This function returns 29 columns:
-<ul>
-<li> <code>PPSA.1</code> - partial positive surface area --
-sum of surface area on positive parts of molecule
-</li>
-<li> <code>PPSA.2</code> - partial positive surface area *
-total positive charge on the molecule
-</li>
-<li> <code>PPSA.3</code> - charge weighted partial positive surface area
-</li>
-<li> <code>PNSA.1</code> - partial negative surface area --
-sum of surface area on negative parts of molecule
-</li>
-<li> <code>PNSA.2</code> - partial negative surface area *
-total negative charge on the molecule
-</li>
-<li> <code>PNSA.3</code> - charge weighted partial negative surface area
-</li>
-<li> <code>DPSA.1</code> - difference of PPSA.1 and PNSA.1
-</li>
-<li> <code>DPSA.2</code> - difference of FPSA.2 and PNSA.2
-</li>
-<li> <code>DPSA.3</code> - difference of PPSA.3 and PNSA.3
-</li>
-<li> <code>FPSA.1</code> - PPSA.1 / total molecular surface area
-</li>
-<li> <code>FFSA.2</code> - PPSA.2 / total molecular surface area
-</li>
-<li> <code>FPSA.3</code> - PPSA.3 / total molecular surface area
-</li>
-<li> <code>FNSA.1</code> - PNSA.1 / total molecular surface area
-</li>
-<li> <code>FNSA.2</code> - PNSA.2 / total molecular surface area
-</li>
-<li> <code>FNSA.3</code> - PNSA.3 / total molecular surface area
-</li>
-<li> <code>WPSA.1</code> - PPSA.1 * total molecular surface area / 1000
-</li>
-<li> <code>WPSA.2</code> - PPSA.2 * total molecular surface area /1000
-</li>
-<li> <code>WPSA.3</code> - PPSA.3 * total molecular surface area / 1000
-</li>
-<li> <code>WNSA.1</code> - PNSA.1 * total molecular surface area /1000
-</li>
-<li> <code>WNSA.2</code> - PNSA.2 * total molecular surface area / 1000
-</li>
-<li> <code>WNSA.3</code> - PNSA.3 * total molecular surface area / 1000
-</li>
-<li> <code>RPCG</code> - relative positive charge --
-most positive charge / total positive charge
-</li>
-<li> <code>RNCG</code> - relative negative charge --
-most negative charge / total negative charge
-</li>
-<li> <code>RPCS</code> - relative positive charge surface area --
-most positive surface area * RPCG
-</li>
-<li> <code>RNCS</code> - relative negative charge surface area --
-most negative surface area * RNCG
-</li>
-<li> <code>THSA</code> - sum of solvent accessible surface areas of
-atoms with absolute value of partial charges less than 0.2
-</li>
-<li> <code>TPSA</code> - sum of solvent accessible surface areas of
-atoms with absolute value of partial charges greater than or equal 0.2
-</li>
-<li> <code>RHSA</code> - THSA / total molecular surface area
-</li>
-<li> <code>RPSA</code> - TPSA / total molecular surface area
-</li>
-</ul></p>
+each column represents one feature. This function returns 29 columns:</p><ul>
+<li><p><code>PPSA.1</code> - partial positive surface area --
+sum of surface area on positive parts of molecule</p></li>
+<li><p><code>PPSA.2</code> - partial positive surface area *
+total positive charge on the molecule</p></li>
+<li><p><code>PPSA.3</code> - charge weighted partial positive surface area</p></li>
+<li><p><code>PNSA.1</code> - partial negative surface area --
+sum of surface area on negative parts of molecule</p></li>
+<li><p><code>PNSA.2</code> - partial negative surface area *
+total negative charge on the molecule</p></li>
+<li><p><code>PNSA.3</code> - charge weighted partial negative surface area</p></li>
+<li><p><code>DPSA.1</code> - difference of PPSA.1 and PNSA.1</p></li>
+<li><p><code>DPSA.2</code> - difference of FPSA.2 and PNSA.2</p></li>
+<li><p><code>DPSA.3</code> - difference of PPSA.3 and PNSA.3</p></li>
+<li><p><code>FPSA.1</code> - PPSA.1 / total molecular surface area</p></li>
+<li><p><code>FFSA.2</code> - PPSA.2 / total molecular surface area</p></li>
+<li><p><code>FPSA.3</code> - PPSA.3 / total molecular surface area</p></li>
+<li><p><code>FNSA.1</code> - PNSA.1 / total molecular surface area</p></li>
+<li><p><code>FNSA.2</code> - PNSA.2 / total molecular surface area</p></li>
+<li><p><code>FNSA.3</code> - PNSA.3 / total molecular surface area</p></li>
+<li><p><code>WPSA.1</code> - PPSA.1 * total molecular surface area / 1000</p></li>
+<li><p><code>WPSA.2</code> - PPSA.2 * total molecular surface area /1000</p></li>
+<li><p><code>WPSA.3</code> - PPSA.3 * total molecular surface area / 1000</p></li>
+<li><p><code>WNSA.1</code> - PNSA.1 * total molecular surface area /1000</p></li>
+<li><p><code>WNSA.2</code> - PNSA.2 * total molecular surface area / 1000</p></li>
+<li><p><code>WNSA.3</code> - PNSA.3 * total molecular surface area / 1000</p></li>
+<li><p><code>RPCG</code> - relative positive charge --
+most positive charge / total positive charge</p></li>
+<li><p><code>RNCG</code> - relative negative charge --
+most negative charge / total negative charge</p></li>
+<li><p><code>RPCS</code> - relative positive charge surface area --
+most positive surface area * RPCG</p></li>
+<li><p><code>RNCS</code> - relative negative charge surface area --
+most negative surface area * RNCG</p></li>
+<li><p><code>THSA</code> - sum of solvent accessible surface areas of
+atoms with absolute value of partial charges less than 0.2</p></li>
+<li><p><code>TPSA</code> - sum of solvent accessible surface areas of
+atoms with absolute value of partial charges greater than or equal 0.2</p></li>
+<li><p><code>RHSA</code> - THSA / total molecular surface area</p></li>
+<li><p><code>RPSA</code> - TPSA / total molecular surface area</p></li>
+</ul>
+
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Calculates 29 Charged Partial Surface Area (CPSA) descriptors.
-The CPSA&#39;s were developed by Stanton et al.</p>
+The CPSA's were developed by Stanton et al.</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
@@ -186,6 +164,7 @@ Analytical Chemistry, 1990, 62:2323.2329.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='no'>sdf</span> <span class='kw'>=</span> <span class='fu'>system.file</span>(<span class='st'>'sysdata/OptAA3d.sdf'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'Rcpi'</span>)
+
 <span class='no'>mol</span> <span class='kw'>=</span> <span class='fu'><a href='readMolFromSDF.html'>readMolFromSDF</a></span>(<span class='no'>sdf</span>)
 <span class='no'>dat</span> <span class='kw'>=</span> <span class='fu'>extractDrugCPSA</span>(<span class='no'>mol</span>)
 <span class='fu'>head</span>(<span class='no'>dat</span>)</pre>

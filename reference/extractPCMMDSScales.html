@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -84,32 +86,45 @@
     <p>Generalized Scales-Based Descriptors derived by Multidimensional Scaling</p>
     
 
-    <pre><span class='fu'>extractPCMMDSScales</span>(<span class='no'>x</span>, <span class='no'>propmat</span>, <span class='no'>k</span>, <span class='no'>lag</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>extractPCMMDSScales</span>(<span class='no'>x</span>, <span class='no'>propmat</span>, <span class='no'>k</span>, <span class='no'>lag</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>x</dt>
-      <dd>A character vector, as the input protein sequence.</dd>
-      <dt>propmat</dt>
-      <dd>A matrix containing the properties for the amino acids.
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>A character vector, as the input protein sequence.</p></td>
+    </tr>
+    <tr>
+      <th>propmat</th>
+      <td><p>A matrix containing the properties for the amino acids.
 Each row represent one amino acid type, each column represents
 one property.
 Note that the one-letter row names must be provided for we
-need them to seek the properties for each AA type.</dd>
-      <dt>k</dt>
-      <dd>Integer. The maximum dimension of the space which the data
+need them to seek the properties for each AA type.</p></td>
+    </tr>
+    <tr>
+      <th>k</th>
+      <td><p>Integer. The maximum dimension of the space which the data
 are to be represented in.
-Must be no greater than the number of AA properties provided.</dd>
-      <dt>lag</dt>
-      <dd>The lag parameter. Must be less than the amino acids.</dd>
-      <dt>scale</dt>
-      <dd>Logical. Should we auto-scale the property matrix
-(<code>propmat</code>) before doing MDS? Default is <code>TRUE</code>.</dd>
-      <dt>silent</dt>
-      <dd>Logical. Whether we print the <code>k</code> eigenvalues
+Must be no greater than the number of AA properties provided.</p></td>
+    </tr>
+    <tr>
+      <th>lag</th>
+      <td><p>The lag parameter. Must be less than the amino acids.</p></td>
+    </tr>
+    <tr>
+      <th>scale</th>
+      <td><p>Logical. Should we auto-scale the property matrix
+(<code>propmat</code>) before doing MDS? Default is <code>TRUE</code>.</p></td>
+    </tr>
+    <tr>
+      <th>silent</th>
+      <td><p>Logical. Whether we print the <code>k</code> eigenvalues
 computed during the scaling process or not.
-Default is <code>TRUE</code>.</dd>
-    </dl>
+Default is <code>TRUE</code>.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 

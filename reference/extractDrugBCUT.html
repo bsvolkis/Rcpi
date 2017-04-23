@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -84,35 +86,34 @@
     <p>BCUT -- Eigenvalue Based Descriptor</p>
     
 
-    <pre><span class='fu'>extractDrugBCUT</span>(<span class='no'>molecules</span>, <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>extractDrugBCUT</span>(<span class='no'>molecules</span>, <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>molecules</dt>
-      <dd>Parsed molucule object.</dd>
-      <dt>silent</dt>
-      <dd>Logical. Whether the calculating process
-should be shown or not, default is <code>TRUE</code>.</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>molecules</th>
+      <td><p>Parsed molucule object.</p></td>
+    </tr>
+    <tr>
+      <th>silent</th>
+      <td><p>Logical. Whether the calculating process
+should be shown or not, default is <code>TRUE</code>.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A data frame, each row represents one of the molecules,
-each column represents one feature. This function returns 6 columns:
-<ul>
-<li> <code>BCUTw-1l, BCUTw-2l ...</code> - n high lowest atom weighted BCUTS
-</li>
-<li> <code>BCUTw-1h, BCUTw-2h ...</code> - n low highest atom weighted BCUTS
-</li>
-<li> <code>BCUTc-1l, BCUTc-2l ...</code> - n high lowest partial charge weighted BCUTS
-</li>
-<li> <code>BCUTc-1h, BCUTc-2h ...</code> - n low highest partial charge weighted BCUTS
-</li>
-<li> <code>BCUTp-1l, BCUTp-2l ...</code> - n high lowest polarizability weighted BCUTS
-</li>
-<li> <code>BCUTp-1h, BCUTp-2h ...</code> - n low highest polarizability weighted BCUTS
-</li>
-</ul></p>
+each column represents one feature. This function returns 6 columns:</p><ul>
+<li><p><code>BCUTw-1l, BCUTw-2l ...</code> - n high lowest atom weighted BCUTS</p></li>
+<li><p><code>BCUTw-1h, BCUTw-2h ...</code> - n low highest atom weighted BCUTS</p></li>
+<li><p><code>BCUTc-1l, BCUTc-2l ...</code> - n high lowest partial charge weighted BCUTS</p></li>
+<li><p><code>BCUTc-1h, BCUTc-2h ...</code> - n low highest partial charge weighted BCUTS</p></li>
+<li><p><code>BCUTp-1l, BCUTp-2l ...</code> - n high lowest polarizability weighted BCUTS</p></li>
+<li><p><code>BCUTp-1h, BCUTp-2h ...</code> - n low highest polarizability weighted BCUTS</p></li>
+</ul>
+
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -122,15 +123,11 @@ The descriptor is based on a weighted version of the Burden matrix which
 takes into account both the connectivity as well as atomic properties
 of a molecule. The weights are a variety of atom properties placed along
 the diagonal of the Burden matrix.
-Currently three weighting schemes are employed:
-<ul>
-<li> Atomic Weight
-</li>
-<li> Partial Charge (Gasteiger Marsilli)
-</li>
-<li> Polarizability (Kang et al.)
-</li>
-</ul></p>
+Currently three weighting schemes are employed:</p><ul>
+<li><p>Atomic Weight</p></li>
+<li><p>Partial Charge (Gasteiger Marsilli)</p></li>
+<li><p>Polarizability (Kang et al.)</p></li>
+</ul>
     
     <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
 
@@ -140,16 +137,16 @@ for the three classes of descriptor in a single ArrayList
 list indicating how many of the highest and lowest eigenvalues
 (for each class of descriptor) are required. The descriptor works with
 the hydrogen depleted molecule.</p>
-    <p>A side effect of specifying the number of highest and lowest eigenvalues
+<p>A side effect of specifying the number of highest and lowest eigenvalues
 is that it is possible to get two copies of all the eigenvalues. That is,
 if a molecule has 5 heavy atoms, then specifying the 5 highest eigenvalues
 returns all of them, and specifying the 5 lowest eigenvalues returns all of
 them, resulting in two copies of all the eigenvalues.</p>
-    <p>Note that it is possible to specify an arbitrarily large number of
+<p>Note that it is possible to specify an arbitrarily large number of
 eigenvalues to be returned. However if the number (i.e., nhigh or nlow)
 is larger than the number of heavy atoms, the remaining eignevalues
 will be <code>NaN</code>.</p>
-    <p>Given the above description, if the aim is to gt all the eigenvalues for
+<p>Given the above description, if the aim is to gt all the eigenvalues for
 a molecule, you should set nlow to 0 and specify the number of heavy atoms
 (or some large number) for nhigh (or vice versa).</p>
     
@@ -158,17 +155,18 @@ a molecule, you should set nlow to 0 and specify the number of heavy atoms
     <p>Pearlman, R.S. and Smith, K.M.,
 Metric Validation and the Receptor-Relevant Subspace Concept,
 J. Chem. Inf. Comput. Sci., 1999, 39:28-35.</p>
-    <p>Burden, F.R., Molecular identification number for substructure searches,
+<p>Burden, F.R., Molecular identification number for substructure searches,
 J. Chem. Inf. Comput. Sci., 1989, 29:225-227.</p>
-    <p>Burden, F.R., Chemically Intuitive Molecular Index,
+<p>Burden, F.R., Chemically Intuitive Molecular Index,
 Quant. Struct. -Act. Relat., 1997, 16:309-314</p>
-    <p>Kang, Y.K. and Jhon, M.S.,
+<p>Kang, Y.K. and Jhon, M.S.,
 Additivity of Atomic Static Polarizabilities and Dispersion Coefficients,
 Theoretica Chimica Acta, 1982, 61:41-48</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='no'>smi</span> <span class='kw'>=</span> <span class='fu'>system.file</span>(<span class='st'>'vignettedata/FDAMDD.smi'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'Rcpi'</span>)
+
 <span class='no'>mol</span> <span class='kw'>=</span> <span class='fu'><a href='readMolFromSmi.html'>readMolFromSmi</a></span>(<span class='no'>smi</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>'mol'</span>)
 <span class='no'>dat</span> <span class='kw'>=</span> <span class='fu'>extractDrugBCUT</span>(<span class='no'>mol</span>)
 <span class='fu'>head</span>(<span class='no'>dat</span>)</pre>

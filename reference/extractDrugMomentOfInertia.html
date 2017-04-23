@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Descriptor that Calculates the Principal Moments of
- — extractDrugMomentOfInertia • Rcpi</title>
+Inertia and Ratios of the Principal Moments — extractDrugMomentOfInertia • Rcpi</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -26,12 +26,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -79,7 +81,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Descriptor that Calculates the Principal Moments of
-</h1>
+Inertia and Ratios of the Principal Moments</h1>
     </div>
 
     
@@ -87,16 +89,21 @@
 Inertia and Ratios of the Principal Moments</p>
     
 
-    <pre><span class='fu'>extractDrugMomentOfInertia</span>(<span class='no'>molecules</span>, <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>extractDrugMomentOfInertia</span>(<span class='no'>molecules</span>, <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>molecules</dt>
-      <dd>Parsed molucule object.</dd>
-      <dt>silent</dt>
-      <dd>Logical. Whether the calculating process
-should be shown or not, default is <code>TRUE</code>.</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>molecules</th>
+      <td><p>Parsed molucule object.</p></td>
+    </tr>
+    <tr>
+      <th>silent</th>
+      <td><p>Logical. Whether the calculating process
+should be shown or not, default is <code>TRUE</code>.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -104,26 +111,17 @@ should be shown or not, default is <code>TRUE</code>.</dd>
 each column represents one feature.
 This function returns 7 columns named
 <code>MOMI.X</code>, <code>MOMI.Y</code>, <code>MOMI.Z</code>,
-<code>MOMI.XY</code>, <code>MOMI.XZ</code>, <code>MOMI.YZ</code>, <code>MOMI.R</code>:
-<ul>
-<li> <code>MOMI.X</code> - MI along X axis
-</li>
-<li> <code>MOMI.Y</code> - MI along Y axis
-</li>
-<li> <code>MOMI.Z</code> - MI along Z axis
-</li>
-<li> <code>MOMI.XY</code> - X/Y
-</li>
-<li> <code>MOMI.XZ</code> - X/Z
-</li>
-<li> <code>MOMI.YZ</code> - Y/Z
-</li>
-<li> <code>MOMI.R</code> - Radius of gyration
-</li>
-</ul></p>
-    <p>One important aspect of the algorithm is that if the eigenvalues
+<code>MOMI.XY</code>, <code>MOMI.XZ</code>, <code>MOMI.YZ</code>, <code>MOMI.R</code>:</p><ul>
+<li><p><code>MOMI.X</code> - MI along X axis</p></li>
+<li><p><code>MOMI.Y</code> - MI along Y axis</p></li>
+<li><p><code>MOMI.Z</code> - MI along Z axis</p></li>
+<li><p><code>MOMI.XY</code> - X/Y</p></li>
+<li><p><code>MOMI.XZ</code> - X/Z</p></li>
+<li><p><code>MOMI.YZ</code> - Y/Z</p></li>
+<li><p><code>MOMI.R</code> - Radius of gyration</p></li>
+</ul><p>One important aspect of the algorithm is that if the eigenvalues
 of the MI tensor are below <code>1e-3</code>,
-then the ratio&#39;s are set to a default of 1000.</p>
+then the ratio's are set to a default of 1000.</p>
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -132,13 +130,14 @@ Moment of inertia (MI) values characterize the mass distribution of a molecule.
 Related to the MI values, ratios of the MI values along the three principal
 axes are also well know modeling variables.
 This descriptor calculates the MI values along the
-X, Y and Z axes as well as the ratio&#39;s X/Y, X/Z and Y/Z.
+X, Y and Z axes as well as the ratio's X/Y, X/Z and Y/Z.
 Finally it also calculates the radius of
 gyration of the molecule.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='no'>sdf</span> <span class='kw'>=</span> <span class='fu'>system.file</span>(<span class='st'>'sysdata/OptAA3d.sdf'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'Rcpi'</span>)
+
 <span class='no'>mol</span> <span class='kw'>=</span> <span class='fu'><a href='readMolFromSDF.html'>readMolFromSDF</a></span>(<span class='no'>sdf</span>)
 <span class='no'>dat</span> <span class='kw'>=</span> <span class='fu'>extractDrugMomentOfInertia</span>(<span class='no'>mol</span>)
 <span class='fu'>head</span>(<span class='no'>dat</span>)</pre>

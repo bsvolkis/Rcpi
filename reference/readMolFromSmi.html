@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Read Molecules from SMILES Files and Return Parsed Java
- — readMolFromSmi • Rcpi</title>
+Molecular Object or Plain Text List — readMolFromSmi • Rcpi</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -26,12 +26,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -79,7 +81,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Read Molecules from SMILES Files and Return Parsed Java
-</h1>
+Molecular Object or Plain Text List</h1>
     </div>
 
     
@@ -87,20 +89,25 @@
 Molecular Object or Plain Text List</p>
     
 
-    <pre><span class='fu'>readMolFromSmi</span>(<span class='no'>smifile</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"mol"</span>, <span class='st'>"text"</span>))</pre>
+    <pre class="usage"><span class='fu'>readMolFromSmi</span>(<span class='no'>smifile</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"mol"</span>, <span class='st'>"text"</span>))</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>smifile</dt>
-      <dd>Character vector, containing SMILES file location(s).</dd>
-      <dt>type</dt>
-      <dd><code>&#39;mol&#39;</code> or <code>&#39;text&#39;</code>. <code>&#39;mol&#39;</code> returns parsed
-Java molecular object, used for <code>&#39;text&#39;</code> returns (plain-text)
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>smifile</th>
+      <td><p>Character vector, containing SMILES file location(s).</p></td>
+    </tr>
+    <tr>
+      <th>type</th>
+      <td><p><code>'mol'</code> or <code>'text'</code>. <code>'mol'</code> returns parsed
+Java molecular object, used for <code>'text'</code> returns (plain-text)
 character string list. For common molecular descriptors and
-fingerprints, use <code>&#39;mol&#39;</code>.
+fingerprints, use <code>'mol'</code>.
 For descriptors and fingerprints calculated by OpenBabel,
-i.e. functions named <code>extractDrugOB...()</code> , use <code>&#39;text&#39;</code>.</dd>
-    </dl>
+i.e. functions named <code>extractDrugOB...()</code> , use <code>'text'</code>.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -120,6 +127,7 @@ from SDF files and returning parsed Java molecular object.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='no'>smi</span> <span class='kw'>=</span> <span class='fu'>system.file</span>(<span class='st'>'vignettedata/FDAMDD.smi'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'Rcpi'</span>)
+
 <span class='no'>mol1</span> <span class='kw'>=</span> <span class='fu'>readMolFromSmi</span>(<span class='no'>smi</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>'mol'</span>)
 <span class='no'>mol2</span> <span class='kw'>=</span> <span class='fu'>readMolFromSmi</span>(<span class='no'>smi</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>'text'</span>)</pre>
   </div>

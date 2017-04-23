@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -84,15 +86,19 @@
     <p>Scales-Based Descriptors with 20+ classes of Molecular Descriptors</p>
     
 
-    <pre><span class='fu'>extractPCMDescScales</span>(<span class='no'>x</span>, <span class='no'>propmat</span>, <span class='kw'>index</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>pc</span>, <span class='no'>lag</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+    <pre class="usage"><span class='fu'>extractPCMDescScales</span>(<span class='no'>x</span>, <span class='no'>propmat</span>, <span class='kw'>index</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='no'>pc</span>, <span class='no'>lag</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>x</dt>
-      <dd>A character vector, as the input protein sequence.</dd>
-      <dt>propmat</dt>
-      <dd>The matrix containing the descriptor set for the amino acids,
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>A character vector, as the input protein sequence.</p></td>
+    </tr>
+    <tr>
+      <th>propmat</th>
+      <td><p>The matrix containing the descriptor set for the amino acids,
 which could be chosen from
 <code>AAMOE2D</code>, <code>AAMOE3D</code>, <code>AACPSA</code>,
 <code>AADescAll</code>, <code>AA2DACOR</code>, <code>AA3DMoRSE</code>,
@@ -101,29 +107,40 @@ which could be chosen from
 <code>AAFGC</code>, <code>AAGeom</code>, <code>AAGETAWAY</code>,
 <code>AAInfo</code>, <code>AAMolProp</code>, <code>AARandic</code>,
 <code>AARDF</code>, <code>AATopo</code>, <code>AATopoChg</code>,
-<code>AAWalk</code>, <code>AAWHIM</code>.</dd>
-      <dt>index</dt>
-      <dd>Integer vector or character vector. Specify which molecular
+<code>AAWalk</code>, <code>AAWHIM</code>.</p></td>
+    </tr>
+    <tr>
+      <th>index</th>
+      <td><p>Integer vector or character vector. Specify which molecular
 descriptors to select from one of these deseriptor sets by specify the
 numerical or character index of the molecular descriptors in the
 descriptor set.
 Default is <code>NULL</code>, means selecting all the molecular descriptors
-in this descriptor set.</dd>
-      <dt>pc</dt>
-      <dd>Integer. The maximum dimension of the space which the data
+in this descriptor set.</p></td>
+    </tr>
+    <tr>
+      <th>pc</th>
+      <td><p>Integer. The maximum dimension of the space which the data
 are to be represented in.
-Must be no greater than the number of AA properties provided.</dd>
-      <dt>lag</dt>
-      <dd>The lag parameter. Must be less than the amino acids.</dd>
-      <dt>scale</dt>
-      <dd>Logical. Should we auto-scale the property matrix
-(<code>propmat</code>) before doing MDS? Default is <code>TRUE</code>.</dd>
-      <dt>silent</dt>
-      <dd>Logical. Whether we print the standard deviation,
+Must be no greater than the number of AA properties provided.</p></td>
+    </tr>
+    <tr>
+      <th>lag</th>
+      <td><p>The lag parameter. Must be less than the amino acids.</p></td>
+    </tr>
+    <tr>
+      <th>scale</th>
+      <td><p>Logical. Should we auto-scale the property matrix
+(<code>propmat</code>) before doing MDS? Default is <code>TRUE</code>.</p></td>
+    </tr>
+    <tr>
+      <th>silent</th>
+      <td><p>Logical. Whether we print the standard deviation,
 proportion of variance and the cumulative proportion of
 the selected principal components or not.
-Default is <code>TRUE</code>.</dd>
-    </dl>
+Default is <code>TRUE</code>.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 

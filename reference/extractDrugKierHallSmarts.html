@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -84,23 +86,27 @@
     <p>Descriptor that Counts the Number of Occurrences of the E-State Fragments</p>
     
 
-    <pre><span class='fu'>extractDrugKierHallSmarts</span>(<span class='no'>molecules</span>, <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>extractDrugKierHallSmarts</span>(<span class='no'>molecules</span>, <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>molecules</dt>
-      <dd>Parsed molucule object.</dd>
-      <dt>silent</dt>
-      <dd>Logical. Whether the calculating process
-should be shown or not, default is <code>TRUE</code>.</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>molecules</th>
+      <td><p>Parsed molucule object.</p></td>
+    </tr>
+    <tr>
+      <th>silent</th>
+      <td><p>Logical. Whether the calculating process
+should be shown or not, default is <code>TRUE</code>.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A data frame, each row represents one of the molecules,
 each column represents one feature.
-This function returns 79 columns:
-<table><tr><td>
+This function returns 79 columns:</p><table><tr><td>
 ID </td>
 <td> Name </td>
 </tr><tr><td> Pattern</td>
@@ -418,7 +424,8 @@ ID </td>
 </tr><tr><td> <code>[PbD3H1](-*)(-*)-*</code></td>
 <td>
 ID </td>
-</tr></table></p>
+</tr></table>
+
     
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -429,7 +436,7 @@ However it has been shown in Butina et al.
 that simply using the counts of the e-state fragments can
 lead to QSAR models that exhibit similar performance to those
 built using the actual e-state indices.</p>
-    <p>Atom typing and aromaticity perception should be
+<p>Atom typing and aromaticity perception should be
 performed prior to calling this descriptor.
 The atom type definitions are taken from Hall et al.
 The SMARTS definitions were obtained from RDKit.</p>
@@ -441,7 +448,7 @@ Performance of Kier-Hall E-state Descriptors
 in Quantitative Structure Activity Relationship (QSAR)
 Studies of Multifunctional Molecules,
 Molecules, 2004, 9:1004-1009.</p>
-    <p>Hall, L.H. and Kier, L.B. ,
+<p>Hall, L.H. and Kier, L.B. ,
 Electrotopological State Indices for Atom Types:
 A Novel Combination of Electronic, Topological,
 and Valence State Information,
@@ -450,6 +457,7 @@ Journal of Chemical Information and Computer Science, 1995, 35:1039-1045.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='no'>smi</span> <span class='kw'>=</span> <span class='fu'>system.file</span>(<span class='st'>'vignettedata/FDAMDD.smi'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'Rcpi'</span>)
+
 <span class='no'>mol</span> <span class='kw'>=</span> <span class='fu'><a href='readMolFromSmi.html'>readMolFromSmi</a></span>(<span class='no'>smi</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>'mol'</span>)
 <span class='no'>dat</span> <span class='kw'>=</span> <span class='fu'>extractDrugKierHallSmarts</span>(<span class='no'>mol</span>)
 <span class='fu'>head</span>(<span class='no'>dat</span>)</pre>

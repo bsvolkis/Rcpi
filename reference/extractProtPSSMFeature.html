@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Profile-based protein representation derived by PSSM
- — extractProtPSSMFeature • Rcpi</title>
+(Position-Specific Scoring Matrix) — extractProtPSSMFeature • Rcpi</title>
 
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
@@ -26,12 +26,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -79,7 +81,7 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Profile-based protein representation derived by PSSM
-</h1>
+(Position-Specific Scoring Matrix)</h1>
     </div>
 
     
@@ -87,13 +89,16 @@
 (Position-Specific Scoring Matrix)</p>
     
 
-    <pre><span class='fu'>extractProtPSSMFeature</span>(<span class='no'>pssmmat</span>)</pre>
+    <pre class="usage"><span class='fu'>extractProtPSSMFeature</span>(<span class='no'>pssmmat</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>pssmmat</dt>
-      <dd>The PSSM computed by <code><a href='extractProtPSSM.html'>extractProtPSSM</a></code>.</dd>
-    </dl>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>pssmmat</th>
+      <td><p>The PSSM computed by <code><a href='extractProtPSSM.html'>extractProtPSSM</a></code>.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -114,10 +119,10 @@ interval (0, 1) by the transformation 1/(1+e^(-x)).</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Ye, Xugang, Guoli Wang, and Stephen F. Altschul.
-&quot;An assessment of substitution scores for protein profile-profile comparison.&quot;
+"An assessment of substitution scores for protein profile-profile comparison."
 <em>Bioinformatics</em> 27.24 (2011): 3356--3363.</p>
-    <p>Rangwala, Huzefa, and George Karypis.
-&quot;Profile-based direct kernels for remote homology detection and fold recognition.&quot;
+<p>Rangwala, Huzefa, and George Karypis.
+"Profile-based direct kernels for remote homology detection and fold recognition."
 <em>Bioinformatics</em> 21.23 (2005): 4239--4247.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
@@ -127,6 +132,7 @@ interval (0, 1) by the transformation 1/(1+e^(-x)).</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='no'>x</span> <span class='kw'>=</span> <span class='fu'><a href='readFASTA.html'>readFASTA</a></span>(<span class='fu'>system.file</span>(<span class='st'>'protseq/P00750.fasta'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'Rcpi'</span>))<span class='kw'>[[</span><span class='fl'>1</span>]]
+
 <span class='no'>dbpath</span> <span class='kw'>=</span> <span class='fu'>tempfile</span>(<span class='st'>'tempdb'</span>, <span class='kw'>fileext</span> <span class='kw'>=</span> <span class='st'>'.fasta'</span>)
 <span class='fu'>invisible</span>(<span class='fu'>file.copy</span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='fu'>system.file</span>(<span class='st'>'protseq/Plasminogen.fasta'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'Rcpi'</span>), <span class='kw'>to</span> <span class='kw'>=</span> <span class='no'>dbpath</span>))
 <span class='no'>pssmmat</span> <span class='kw'>=</span> <span class='fu'><a href='extractProtPSSM.html'>extractProtPSSM</a></span>(<span class='kw'>seq</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>database.path</span> <span class='kw'>=</span> <span class='no'>dbpath</span>)

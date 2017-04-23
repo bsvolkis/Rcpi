@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -84,36 +86,49 @@
     <p>Generalized BLOSUM and PAM Matrix-Derived Descriptors</p>
     
 
-    <pre><span class='fu'>extractPCMBLOSUM</span>(<span class='no'>x</span>, <span class='kw'>submat</span> <span class='kw'>=</span> <span class='st'>"AABLOSUM62"</span>, <span class='no'>k</span>, <span class='no'>lag</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+    <pre class="usage"><span class='fu'>extractPCMBLOSUM</span>(<span class='no'>x</span>, <span class='kw'>submat</span> <span class='kw'>=</span> <span class='st'>"AABLOSUM62"</span>, <span class='no'>k</span>, <span class='no'>lag</span>, <span class='kw'>scale</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>silent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>x</dt>
-      <dd>A character vector, as the input protein sequence.</dd>
-      <dt>submat</dt>
-      <dd>Substitution matrix for the 20 amino acids. Should be one of
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>A character vector, as the input protein sequence.</p></td>
+    </tr>
+    <tr>
+      <th>submat</th>
+      <td><p>Substitution matrix for the 20 amino acids. Should be one of
 <code>AABLOSUM45</code>, <code>AABLOSUM50</code>, <code>AABLOSUM62</code>,
 <code>AABLOSUM80</code>, <code>AABLOSUM100</code>, <code>AAPAM30</code>,
 <code>AAPAM40</code>, <code>AAPAM70</code>, <code>AAPAM120</code>, <code>AAPAM250</code>.
-Default is <code>&#39;AABLOSUM62&#39;</code>.</dd>
-      <dt>k</dt>
-      <dd>Integer. The number of selected scales (i.e. the first
+Default is <code>'AABLOSUM62'</code>.</p></td>
+    </tr>
+    <tr>
+      <th>k</th>
+      <td><p>Integer. The number of selected scales (i.e. the first
 <code>k</code> scales) derived by the substitution matrix.
 This could be selected according to the printed relative
-importance values.</dd>
-      <dt>lag</dt>
-      <dd>The lag parameter. Must be less than the amino acids.</dd>
-      <dt>scale</dt>
-      <dd>Logical. Should we auto-scale the substitution matrix
+importance values.</p></td>
+    </tr>
+    <tr>
+      <th>lag</th>
+      <td><p>The lag parameter. Must be less than the amino acids.</p></td>
+    </tr>
+    <tr>
+      <th>scale</th>
+      <td><p>Logical. Should we auto-scale the substitution matrix
 (<code>submat</code>) before doing eigen decomposition? Default is
-<code>TRUE</code>.</dd>
-      <dt>silent</dt>
-      <dd>Logical. Whether we print the relative importance of
+<code>TRUE</code>.</p></td>
+    </tr>
+    <tr>
+      <th>silent</th>
+      <td><p>Logical. Whether we print the relative importance of
 each scales (diagnal value of the eigen decomposition result matrix B)
 or not.
-Default is <code>TRUE</code>.</dd>
-    </dl>
+Default is <code>TRUE</code>.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -123,7 +138,7 @@ Default is <code>TRUE</code>.</dd>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>This function calculates the generalized BLOSUM matrix-derived descriptors.
-For users&#39; convenience, <code>Rcpi</code> provides the
+For users' convenience, <code>Rcpi</code> provides the
 BLOSUM45, BLOSUM50, BLOSUM62, BLOSUM80, BLOSUM100,
 PAM30, PAM40, PAM70, PAM120, and PAM250 matrices
 for the 20 amino acids to select.</p>

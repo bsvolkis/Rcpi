@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -84,47 +86,54 @@
     <p>Moran Autocorrelation Descriptor</p>
     
 
-    <pre><span class='fu'>extractProtMoran</span>(<span class='no'>x</span>, <span class='kw'>props</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"CIDH920105"</span>, <span class='st'>"BHAR880101"</span>, <span class='st'>"CHAM820101"</span>,
+    <pre class="usage"><span class='fu'>extractProtMoran</span>(<span class='no'>x</span>, <span class='kw'>props</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"CIDH920105"</span>, <span class='st'>"BHAR880101"</span>, <span class='st'>"CHAM820101"</span>,
   <span class='st'>"CHAM820102"</span>, <span class='st'>"CHOC760101"</span>, <span class='st'>"BIGC670101"</span>, <span class='st'>"CHAM810101"</span>, <span class='st'>"DAYM780201"</span>),
   <span class='kw'>nlag</span> <span class='kw'>=</span> <span class='fl'>30L</span>, <span class='kw'>customprops</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>x</dt>
-      <dd>A character vector, as the input protein sequence.</dd>
-      <dt>props</dt>
-      <dd>A character vector, specifying the
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>A character vector, as the input protein sequence.</p></td>
+    </tr>
+    <tr>
+      <th>props</th>
+      <td><p>A character vector, specifying the
 Accession Number of the target properties.
-8 properties are used by default, as listed below:
-<dl class='dl-horizontal'>
-<dt>AccNo. CIDH920105</dt><dd>Normalized average hydrophobicity scales (Cid et al., 1992)</dd>
-<dt>AccNo. BHAR880101</dt><dd>Average flexibility indices (Bhaskaran-Ponnuswamy, 1988)</dd>
-<dt>AccNo. CHAM820101</dt><dd>Polarizability parameter (Charton-Charton, 1982)</dd>
-<dt>AccNo. CHAM820102</dt><dd>Free energy of solution in water, kcal/mole (Charton-Charton, 1982)</dd>
-<dt>AccNo. CHOC760101</dt><dd>Residue accessible surface area in tripeptide (Chothia, 1976)</dd>
-<dt>AccNo. BIGC670101</dt><dd>Residue volume (Bigelow, 1967)</dd>
-<dt>AccNo. CHAM810101</dt><dd>Steric parameter (Charton, 1981)</dd>
-<dt>AccNo. DAYM780201</dt><dd>Relative mutability (Dayhoff et al., 1978b)</dd></dl>
-</dd>
-      <dt>nlag</dt>
-      <dd>Maximum value of the lag parameter. Default is <code>30</code>.</dd>
-      <dt>customprops</dt>
-      <dd>A <code>n x 21</code> named data frame contains <code>n</code>
+8 properties are used by default, as listed below:</p><dl class='dl-horizontal'>
+<dt>AccNo. CIDH920105</dt><dd><p>Normalized average hydrophobicity scales (Cid et al., 1992)</p></dd>
+<dt>AccNo. BHAR880101</dt><dd><p>Average flexibility indices (Bhaskaran-Ponnuswamy, 1988)</p></dd>
+<dt>AccNo. CHAM820101</dt><dd><p>Polarizability parameter (Charton-Charton, 1982)</p></dd>
+<dt>AccNo. CHAM820102</dt><dd><p>Free energy of solution in water, kcal/mole (Charton-Charton, 1982)</p></dd>
+<dt>AccNo. CHOC760101</dt><dd><p>Residue accessible surface area in tripeptide (Chothia, 1976)</p></dd>
+<dt>AccNo. BIGC670101</dt><dd><p>Residue volume (Bigelow, 1967)</p></dd>
+<dt>AccNo. CHAM810101</dt><dd><p>Steric parameter (Charton, 1981)</p></dd>
+<dt>AccNo. DAYM780201</dt><dd><p>Relative mutability (Dayhoff et al., 1978b)</p></dd></dl></td>
+    </tr>
+    <tr>
+      <th>nlag</th>
+      <td><p>Maximum value of the lag parameter. Default is <code>30</code>.</p></td>
+    </tr>
+    <tr>
+      <th>customprops</th>
+      <td><p>A <code>n x 21</code> named data frame contains <code>n</code>
 customize property. Each row contains one property.
 The column order for different amino acid types is
-<code>&#39;AccNo&#39;</code>, <code>&#39;A&#39;</code>, <code>&#39;R&#39;</code>, <code>&#39;N&#39;</code>,
-<code>&#39;D&#39;</code>, <code>&#39;C&#39;</code>, <code>&#39;E&#39;</code>, <code>&#39;Q&#39;</code>,
-<code>&#39;G&#39;</code>, <code>&#39;H&#39;</code>, <code>&#39;I&#39;</code>, <code>&#39;L&#39;</code>,
-<code>&#39;K&#39;</code>, <code>&#39;M&#39;</code>, <code>&#39;F&#39;</code>, <code>&#39;P&#39;</code>,
-<code>&#39;S&#39;</code>, <code>&#39;T&#39;</code>, <code>&#39;W&#39;</code>, <code>&#39;Y&#39;</code>,
-<code>&#39;V&#39;</code>, and the columns should also be <em>exactly</em>
+<code>'AccNo'</code>, <code>'A'</code>, <code>'R'</code>, <code>'N'</code>,
+<code>'D'</code>, <code>'C'</code>, <code>'E'</code>, <code>'Q'</code>,
+<code>'G'</code>, <code>'H'</code>, <code>'I'</code>, <code>'L'</code>,
+<code>'K'</code>, <code>'M'</code>, <code>'F'</code>, <code>'P'</code>,
+<code>'S'</code>, <code>'T'</code>, <code>'W'</code>, <code>'Y'</code>,
+<code>'V'</code>, and the columns should also be <em>exactly</em>
 named like this.
-The <code>AccNo</code> column contains the properties&#39; names.
+The <code>AccNo</code> column contains the properties' names.
 Then users should explicitly specify these properties
 with these names in the argument <code>props</code>.
 See the examples below for a demonstration.
-The default value for <code>customprops</code> is <code>NULL</code>.</dd>
-    </dl>
+The default value for <code>customprops</code> is <code>NULL</code>.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -139,15 +148,15 @@ autocorrelation descriptor (Dim: <code>length(props) * nlag</code>).</p>
 
     <p>AAindex: Amino acid index database.
 <a href = 'http://www.genome.ad.jp/dbget/aaindex.html'>http://www.genome.ad.jp/dbget/aaindex.html</a></p>
-    <p>Feng, Z.P. and Zhang, C.T. (2000)
+<p>Feng, Z.P. and Zhang, C.T. (2000)
 Prediction of membrane protein types based on the hydrophobic
 index of amino acids.
 <em>Journal of Protein Chemistry</em>, 19, 269-275.</p>
-    <p>Horne, D.S. (1988)
+<p>Horne, D.S. (1988)
 Prediction of protein helix content from
 an autocorrelation analysis of sequence hydrophobicities.
 <em>Biopolymers</em>, 27, 451-477.</p>
-    <p>Sokal, R.R. and Thomson, B.A. (2006)
+<p>Sokal, R.R. and Thomson, B.A. (2006)
 Population structure inferred by local spatial autocorrelation:
 an Usage from an Amerindian tribal population.
 <em>American Journal of Physical Anthropology</em>, 129, 121-131.</p>

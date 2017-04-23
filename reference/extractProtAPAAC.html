@@ -25,12 +25,14 @@
 <script src="../pkgdown.js"></script>
 
 <!-- mathjax -->
-<script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
 <!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
+
+
   </head>
 
   <body>
@@ -84,43 +86,52 @@
     <p>Amphiphilic Pseudo Amino Acid Composition Descriptor</p>
     
 
-    <pre><span class='fu'>extractProtAPAAC</span>(<span class='no'>x</span>, <span class='kw'>props</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Hydrophobicity"</span>, <span class='st'>"Hydrophilicity"</span>),
+    <pre class="usage"><span class='fu'>extractProtAPAAC</span>(<span class='no'>x</span>, <span class='kw'>props</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"Hydrophobicity"</span>, <span class='st'>"Hydrophilicity"</span>),
   <span class='kw'>lambda</span> <span class='kw'>=</span> <span class='fl'>30</span>, <span class='kw'>w</span> <span class='kw'>=</span> <span class='fl'>0.05</span>, <span class='kw'>customprops</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
-    <dl class="dl-horizontal">
-      <dt>x</dt>
-      <dd>A character vector, as the input protein sequence.</dd>
-      <dt>props</dt>
-      <dd>A character vector, specifying the properties used.
-2 properties are used by default, as listed below:
-<dl class='dl-horizontal'>
-<dt><code>&#39;Hydrophobicity&#39;</code></dt><dd>Hydrophobicity value
-of the 20 amino acids</dd>
-<dt><code>&#39;Hydrophilicity&#39;</code></dt><dd>Hydrophilicity value
-of the 20 amino acids</dd></dl>
-</dd>
-      <dt>lambda</dt>
-      <dd>The lambda parameter for the APAAC descriptors, default is 30.</dd>
-      <dt>w</dt>
-      <dd>The weighting factor, default is 0.05.</dd>
-      <dt>customprops</dt>
-      <dd>A <code>n x 21</code> named data frame contains <code>n</code>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>A character vector, as the input protein sequence.</p></td>
+    </tr>
+    <tr>
+      <th>props</th>
+      <td><p>A character vector, specifying the properties used.
+2 properties are used by default, as listed below:</p><dl class='dl-horizontal'>
+<dt><code>'Hydrophobicity'</code></dt><dd><p>Hydrophobicity value
+of the 20 amino acids</p></dd>
+<dt><code>'Hydrophilicity'</code></dt><dd><p>Hydrophilicity value
+of the 20 amino acids</p></dd></dl></td>
+    </tr>
+    <tr>
+      <th>lambda</th>
+      <td><p>The lambda parameter for the APAAC descriptors, default is 30.</p></td>
+    </tr>
+    <tr>
+      <th>w</th>
+      <td><p>The weighting factor, default is 0.05.</p></td>
+    </tr>
+    <tr>
+      <th>customprops</th>
+      <td><p>A <code>n x 21</code> named data frame contains <code>n</code>
 customize property. Each row contains one property.
 The column order for different amino acid types is
-<code>&#39;AccNo&#39;</code>, <code>&#39;A&#39;</code>, <code>&#39;R&#39;</code>, <code>&#39;N&#39;</code>,
-<code>&#39;D&#39;</code>, <code>&#39;C&#39;</code>, <code>&#39;E&#39;</code>, <code>&#39;Q&#39;</code>,
-<code>&#39;G&#39;</code>, <code>&#39;H&#39;</code>, <code>&#39;I&#39;</code>, <code>&#39;L&#39;</code>,
-<code>&#39;K&#39;</code>, <code>&#39;M&#39;</code>, <code>&#39;F&#39;</code>, <code>&#39;P&#39;</code>,
-<code>&#39;S&#39;</code>, <code>&#39;T&#39;</code>, <code>&#39;W&#39;</code>, <code>&#39;Y&#39;</code>,
-<code>&#39;V&#39;</code>, and the columns should also be
+<code>'AccNo'</code>, <code>'A'</code>, <code>'R'</code>, <code>'N'</code>,
+<code>'D'</code>, <code>'C'</code>, <code>'E'</code>, <code>'Q'</code>,
+<code>'G'</code>, <code>'H'</code>, <code>'I'</code>, <code>'L'</code>,
+<code>'K'</code>, <code>'M'</code>, <code>'F'</code>, <code>'P'</code>,
+<code>'S'</code>, <code>'T'</code>, <code>'W'</code>, <code>'Y'</code>,
+<code>'V'</code>, and the columns should also be
 <em>exactly</em> named like this.
-The <code>AccNo</code> column contains the properties&#39; names.
+The <code>AccNo</code> column contains the properties' names.
 Then users should explicitly specify these properties
 with these names in the argument <code>props</code>.
 See the examples below for a demonstration.
-The default value for <code>customprops</code> is <code>NULL</code>.</dd>
-    </dl>
+The default value for <code>customprops</code> is <code>NULL</code>.</p></td>
+    </tr>
+    </table>
     
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
@@ -148,12 +159,12 @@ Composition (APAAC) descriptor
     <p>Kuo-Chen Chou. Prediction of Protein Cellular Attributes
 Using Pseudo-Amino Acid Composition.
 <em>PROTEINS: Structure, Function, and Genetics</em>, 2001, 43: 246-255.</p>
-    <p>Type 2 pseudo amino acid composition.
+<p>Type 2 pseudo amino acid composition.
 <a href = 'http://www.csbio.sjtu.edu.cn/bioinf/PseAAC/type2.htm'>http://www.csbio.sjtu.edu.cn/bioinf/PseAAC/type2.htm</a></p>
-    <p>Kuo-Chen Chou. Using Amphiphilic Pseudo Amino Acid Composition
+<p>Kuo-Chen Chou. Using Amphiphilic Pseudo Amino Acid Composition
 to Predict Enzyme Subfamily Classes. <em>Bioinformatics</em>, 2005, 21, 10-19.</p>
-    <p>JACS, 1962, 84: 4240-4246. (C. Tanford). (The hydrophobicity data)</p>
-    <p>PNAS, 1981, 78:3824-3828 (T.P.Hopp &amp; K.R.Woods). (The hydrophilicity data)</p>
+<p>JACS, 1962, 84: 4240-4246. (C. Tanford). (The hydrophobicity data)</p>
+<p>PNAS, 1981, 78:3824-3828 (T.P.Hopp &amp; K.R.Woods). (The hydrophilicity data)</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
