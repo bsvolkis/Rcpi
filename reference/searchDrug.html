@@ -24,7 +24,8 @@ Molecular Fingerprints Similarity or Maximum Common Substructure Search — sear
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
-
+  
+  
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -52,10 +53,28 @@ Molecular Fingerprints Similarity or Maximum Common Substructure Search — sear
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="../reference/index.html">Reference</a>
+  <a href="..//index.html">
+    <span class="fa fa-home fa-lg"></span>
+     
+  </a>
 </li>
 <li>
-  <a href="../articles/index.html">Articles</a>
+  <a href="../articles/Rcpi.html">Get Started</a>
+</li>
+<li>
+  <a href="../reference/index.html">Reference</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/Rcpi-quickref.html">Rcpi Quick Reference Card</a>
+    </li>
+  </ul>
 </li>
 <li>
   <a href="../news/index.html">News</a>
@@ -163,14 +182,16 @@ This function runs for a query compound against a set of molecules.</p>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='no'>mol</span> <span class='kw'>=</span> <span class='fu'>system.file</span>(<span class='st'>'compseq/DB00530.sdf'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'Rcpi'</span>)
+    <pre class="examples"><span class='co'># NOT RUN {</span>
+<span class='no'>mol</span> <span class='kw'>=</span> <span class='fu'>system.file</span>(<span class='st'>'compseq/DB00530.sdf'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'Rcpi'</span>)
 <span class='co'># DrugBank ID DB00530: Erlotinib</span>
 <span class='no'>moldb</span> <span class='kw'>=</span> <span class='fu'>system.file</span>(<span class='st'>'compseq/tyrphostin.sdf'</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>'Rcpi'</span>)
 <span class='co'># Database composed by searching 'tyrphostin' in PubChem and filtered by Lipinski's Rule of Five</span>
-
+<span class='co'># }</span><span class='co'># NOT RUN {</span>
 <span class='fu'>searchDrug</span>(<span class='no'>mol</span>, <span class='no'>moldb</span>, <span class='kw'>cores</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>'fp'</span>, <span class='kw'>fptype</span> <span class='kw'>=</span> <span class='st'>'maccs'</span>, <span class='kw'>fpsim</span> <span class='kw'>=</span> <span class='st'>'hamming'</span>)
 <span class='fu'>searchDrug</span>(<span class='no'>mol</span>, <span class='no'>moldb</span>, <span class='kw'>cores</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>'fp'</span>, <span class='kw'>fptype</span> <span class='kw'>=</span> <span class='st'>'fp2'</span>, <span class='kw'>fpsim</span> <span class='kw'>=</span> <span class='st'>'tanimoto'</span>)
-<span class='fu'>searchDrug</span>(<span class='no'>mol</span>, <span class='no'>moldb</span>, <span class='kw'>cores</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>'mcs'</span>, <span class='kw'>mcssim</span> <span class='kw'>=</span> <span class='st'>'tanimoto'</span>)</pre>
+<span class='fu'>searchDrug</span>(<span class='no'>mol</span>, <span class='no'>moldb</span>, <span class='kw'>cores</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>'mcs'</span>, <span class='kw'>mcssim</span> <span class='kw'>=</span> <span class='st'>'tanimoto'</span>)
+<span class='co'># }</span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
@@ -186,7 +207,7 @@ This function runs for a query compound against a set of molecules.</p>
 
     <h2>Author</h2>
     
-Nan Xiao &lt;<a href = 'https://nanx.me'>https://nanx.me</a>&gt;
+Nan Xiao &lt;<a href='https://nanx.me'>https://nanx.me</a>&gt;
 
   </div>
 </div>
