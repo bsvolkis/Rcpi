@@ -87,7 +87,7 @@
       <h1>Rcpi: R/Bioconductor Package as an Integrated Informatics Platform for Drug Discovery</h1>
                         <h4 class="author">Nan Xiao &lt;<a href="https://nanx.me" class="uri">https://nanx.me</a>&gt;</h4>
             
-            <h4 class="date">2017-10-08</h4>
+            <h4 class="date">2017-10-10</h4>
           </div>
 
     
@@ -496,7 +496,7 @@ Figure 4: Smoothed ROC curves for different fingerprint types
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(<span class="st">"Rcpi"</span>)
 mols =<span class="st"> </span><span class="kw"><a href="../reference/readMolFromSDF.html">readMolFromSDF</a></span>(<span class="kw">system.file</span>(
     <span class="st">"compseq/tyrphostin.sdf"</span>, <span class="dt">package =</span> <span class="st">"Rcpi"</span>))</code></pre></div>
-<p>Then compute the E-state fingerprints for all the molecules using <code><a href="../reference/extractDrugEstate.html">extractDrugEstate()</a></code>, and calculate their pairwise similarity matrix with <code><a href="../reference/calcDrugFPSim.html">calcDrugFPSim()</a></code>:</p>
+<p>Then we compute the E-state fingerprints for all the molecules using <code><a href="../reference/extractDrugEstate.html">extractDrugEstate()</a></code>, and calculate their pairwise similarity matrix with <code><a href="../reference/calcDrugFPSim.html">calcDrugFPSim()</a></code>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">simmat =<span class="st"> </span><span class="kw">diag</span>(<span class="kw">length</span>(mols))
 
 <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(mols)) {
@@ -508,8 +508,8 @@ mols =<span class="st"> </span><span class="kw"><a href="../reference/readMolFro
    simmat[j, i] =<span class="st"> </span>tmp
  }
 }</code></pre></div>
-<p>For the computed similarity matrix <code>simmat</code>, we will try to do hierarchical clustering with it, then visualize the clustering result:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mol.hc =<span class="st"> </span><span class="kw">hclust</span>(<span class="kw">as.dist</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>simmat), <span class="dt">method =</span> <span class="st">"ward"</span>)
+<p>With the computed similarity matrix <code>simmat</code>, we will try to cluster the molecules using hierarchical clustering, then visualize the clustering result:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mol.hc =<span class="st"> </span><span class="kw">hclust</span>(<span class="kw">as.dist</span>(<span class="dv">1</span> <span class="op">-</span><span class="st"> </span>simmat), <span class="dt">method =</span> <span class="st">"ward.D"</span>)
 
 <span class="kw">library</span>(<span class="st">"ape"</span>)  <span class="co"># tree visualization of clusters</span>
 clus5 =<span class="st"> </span><span class="kw">cutree</span>(mol.hc, <span class="dv">5</span>)  <span class="co"># cut dendrogram into 5 clusters</span>
@@ -517,10 +517,10 @@ clus5 =<span class="st"> </span><span class="kw">cutree</span>(mol.hc, <span cla
 <span class="co"># generate colors</span>
 <span class="kw">library</span>(<span class="st">"RColorBrewer"</span>)
 pal5 =<span class="st"> </span><span class="kw"><a href="http://www.rdocumentation.org/packages/RColorBrewer/topics/ColorBrewer">brewer.pal</a></span>(<span class="dv">5</span>, <span class="st">"Set1"</span>)
-<span class="kw">plot</span>(<span class="kw">as.phylo</span>(mol.hc), <span class="dt">type =</span> <span class="st">"fan"</span>,
+<span class="kw">plot</span>(<span class="kw"><a href="http://www.rdocumentation.org/packages/ape/topics/as.phylo">as.phylo</a></span>(mol.hc), <span class="dt">type =</span> <span class="st">"fan"</span>,
      <span class="dt">tip.color =</span> pal5[clus5],
      <span class="dt">label.offset =</span> <span class="fl">0.1</span>, <span class="dt">cex =</span> <span class="fl">0.7</span>)</code></pre></div>
-<p>The clustering result for these molecules is shown in Figure 5.</p>
+<p>The hierarchical clustering result for these molecules is shown in Figure 5.</p>
 <img src="figures/ex4-1.png" width="65%" class="img-responsive" align="center" alt="Tree visualization of the molecular clustering result"><p align="center">
 Figure 5: Tree visualization of the molecular clustering result
 </p>
